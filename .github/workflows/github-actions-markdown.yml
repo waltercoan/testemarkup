@@ -27,4 +27,4 @@ jobs:
         run: |
             git add .
             git commit -m "update"
-            git branch --set-upstream-to=origin/main gh-pages
+            git push -u origin gh-pages
