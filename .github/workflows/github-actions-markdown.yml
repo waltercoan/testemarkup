@@ -20,7 +20,6 @@ jobs:
         run: |
             git fetch origin
             git checkout -b gh-pages
-            git pull
             git merge --allow-unrelated-histories origin/main
       - run: npm install -g markmap-cli
       - run: markmap -o ./html/index.html ./mapas/mapa1.md
@@ -28,4 +27,4 @@ jobs:
         run: |
             git add .
             git commit -m "update"
-            git push origin gh-pages
+            git branch --set-upstream-to=origin/main gh-pages
