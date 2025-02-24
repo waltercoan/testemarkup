@@ -22,7 +22,20 @@ jobs:
             git checkout -b gh-pages
             git merge --allow-unrelated-histories origin/main
       - run: npm install -g markmap-cli
-      - run: markmap -o ./index.html ./mapas/mapa1.md
+      - name: Finding files
+        id: finding-files        
+        run: |
+            {
+            echo 'FILELIST<<EOF'
+            find . -name '*.md' -print 
+            echo EOF
+            } >> "$GITHUB_ENV"
+      - name: Do something with each file
+        run: |
+            for i in $FILELIST; do
+            markmap -o "${i%.*}.html" "${i}"
+            done        
+      - run: 
       - name: push branch
         run: |
             git add .
