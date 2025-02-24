@@ -20,6 +20,7 @@ jobs:
         run: |
             git fetch origin
             git checkout -b gh-pages
+            git pull
             git merge --allow-unrelated-histories origin/main
       - run: npm install -g markmap-cli
       - name: Finding files
