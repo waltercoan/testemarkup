@@ -23,7 +23,7 @@ jobs:
             git merge --allow-unrelated-histories origin/main
       - run: npm install -g markmap-cli
       - run: markmap -o ./index.html ./mapas/mapa1.md
-      - name: Update Test Branch
+      - name: push branch
         run: |
             git add .
             git commit -m "update"
