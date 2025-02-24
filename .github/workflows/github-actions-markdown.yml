@@ -22,7 +22,7 @@ jobs:
             git checkout -b gh-pages
             git merge --allow-unrelated-histories origin/main
       - run: npm install -g markmap-cli
-      - run: markmap -o ./html/index.html ./mapas/mapa1.md
+      - run: markmap -o ./index.html ./mapas/mapa1.md
       - name: Update Test Branch
         run: |
             git add .
