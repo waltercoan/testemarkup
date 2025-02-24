@@ -35,7 +35,6 @@ jobs:
             for i in $FILELIST; do
             markmap -o "${i%.*}.html" "${i}"
             done        
-      - run: 
       - name: push branch
         run: |
             git add .
